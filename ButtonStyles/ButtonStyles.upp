@@ -1,0 +1,15 @@
+description "Different buttons styles\377";
+
+uses
+	CtrlLib,
+	Painter;
+
+file
+	ButtonStyles.h,
+	ButtonsStyles.cpp,
+	ButtonStyles.usc,
+	Copying;
+
+mainconfig
+	"" = "GUI";
+
