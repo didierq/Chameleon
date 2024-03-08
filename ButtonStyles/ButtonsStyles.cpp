@@ -29,7 +29,9 @@ Value MakeButtonLook( ButtonStyle_style& style )
 
 #define TEST(FLAG)  ((e.flags & ButtonLook::FLAG)==ButtonLook::FLAG)
 
-Value ButtonStyleLookFunction(Draw& dw, const Rect& rect, const Value& v, int op)
+//void  ChLookFn(Value (*fn)   (Draw&  w, const Rect& r,    const Value& look, int lookop, Color ink));
+
+Value ButtonStyleLookFunction(Draw& dw, const Rect& rect, const Value& v,    int op, Color ink) // TODO add ink management
 {
 	if( v.Is<ButtonLook>() )
 	{
@@ -39,7 +41,7 @@ Value ButtonStyleLookFunction(Draw& dw, const Rect& rect, const Value& v, int op
 			case LOOK_MARGINS:
 				return rect;
 //			Rect(2,2,2,2);
-			case LOOK_ISOPAQUE:
+			case LOOK_PAINTEDGE:  // TODO do not know what todo with new value ???
 				return false;
 			case LOOK_PAINT:
 			{

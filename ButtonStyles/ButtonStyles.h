@@ -169,6 +169,7 @@ class TStyledButton : public T_BUTTON {
 
 		CLASSNAME& pushState(int c) { return *this; } // dummy function
 		
+#if 0
 		#define  MAKE_STYLE_FN(N, PREFIX) \
 			CLASSNAME& PREFIX##_color(Color  c)    { styles[N-1].look.buttoncolor = c; bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }\
 			CLASSNAME& PREFIX##_backColor(Color c) { styles[N-1].look.backcolor = c;   bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }\
@@ -184,6 +185,45 @@ class TStyledButton : public T_BUTTON {
 		MAKE_STYLE_FN( 3, PRESS )
 		MAKE_STYLE_FN( 4, DISAB )
 		#undef MAKE_STYLE_FN
+#else
+
+		CLASSNAME& NORM_color(Color  c)    { styles[0].look.buttoncolor = c; bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& NORM_backColor(Color c) { styles[0].look.backcolor = c;   bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& NORM_textColor(Color c) { styles[0].textColor = c;        bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& NORM_flags(int c)       { styles[0].look.flags = c;       bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& NORM_alpha(int c)       { styles[0].look.alphaValue = c;  bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& NORM_deflate(int c)     { styles[0].look.deflate = c;     bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& NORM_borderWidth(int c) { styles[0].look.borderWidth = c; bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& NORM_setIcon(Image c)   { styles[0].look.buttonIcon = c;  bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+
+		CLASSNAME& HOT_color(Color  c)    { styles[1].look.buttoncolor = c; bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& HOT_backColor(Color c) { styles[1].look.backcolor = c;   bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& HOT_textColor(Color c) { styles[1].textColor = c;        bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& HOT_flags(int c)       { styles[1].look.flags = c;       bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& HOT_alpha(int c)       { styles[1].look.alphaValue = c;  bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& HOT_deflate(int c)     { styles[1].look.deflate = c;     bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& HOT_borderWidth(int c) { styles[1].look.borderWidth = c; bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& HOT_setIcon(Image c)   { styles[1].look.buttonIcon = c;  bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+
+		CLASSNAME& PRESS_color(Color  c)    { styles[2].look.buttoncolor = c; bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& PRESS_backColor(Color c) { styles[2].look.backcolor = c;   bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& PRESS_textColor(Color c) { styles[2].textColor = c;        bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& PRESS_flags(int c)       { styles[2].look.flags = c;       bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& PRESS_alpha(int c)       { styles[2].look.alphaValue = c;  bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& PRESS_deflate(int c)     { styles[2].look.deflate = c;     bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& PRESS_borderWidth(int c) { styles[2].look.borderWidth = c; bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& PRESS_setIcon(Image c)   { styles[2].look.buttonIcon = c;  bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+
+		CLASSNAME& DISAB_color(Color  c)    { styles[3].look.buttoncolor = c; bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& DISAB_backColor(Color c) { styles[3].look.backcolor = c;   bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& DISAB_textColor(Color c) { styles[3].textColor = c;        bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& DISAB_flags(int c)       { styles[3].look.flags = c;       bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& DISAB_alpha(int c)       { styles[3].look.alphaValue = c;  bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& DISAB_deflate(int c)     { styles[3].look.deflate = c;     bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& DISAB_borderWidth(int c) { styles[3].look.borderWidth = c; bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+		CLASSNAME& DISAB_setIcon(Image c)   { styles[3].look.buttonIcon = c;  bChameleon = toChameleon<typename T_BUTTON::Style>( styles ); return *this; }
+#endif
+
 
 		void SetIcon(Image icon) {
 			styles[0].look.buttonIcon = icon;
